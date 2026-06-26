@@ -26,6 +26,12 @@ private void UpdateHealthBar()
         healthBar.value = currentHealth / maxHealth;
     }
 
+private void Heal(float amount)
+    {
+        currentHealth +=amount;
+        currentHealth = Mathf.Clamp (currentHealth,0f, maxHealth);
+        UpdateHealthBar();
+    }
 public void TakeDamage(float damage)
     {
         currentHealth -= damage;
