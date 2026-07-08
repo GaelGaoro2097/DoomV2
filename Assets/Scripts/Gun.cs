@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-
+using System.Collections;
 public class Gun: MonoBehaviour
 {
     [SerializeField]
@@ -23,7 +23,7 @@ private Text ammoText;
 
 private float nextFireTime;
 private int totalBullets;
-private int cartrigeBullets;
+private int cartridgeBullets;
 
 private UnityEvent onGunEmpty = new UnityEvent();
 
@@ -49,17 +49,34 @@ ChargeGun(false);
 
 public void ChargeGun(bool playAnimation=true)
     {
-        if (totalBullets<=0 || cartrigeBullets == gunData.cartridgeSize) return;
+        if (totalBullets<=0 || cartridgeBullets == gunData.cartridgeSize) return;
         SoundManager.instance.Play(gunData.reloadSoundName);
-        cartrigeBullets = Mathf.Min(gunData.cartridgeSize, totalBullets);
-        totalBullets -= cartrigeBullets;
-        if (playAnimation)animator.Play("Charge", 0, 0f);
-        UpdateAmmoText();
+        if (playAnimation)
+        {
+          StartCoroutine(ChargeGunCoroutine());  
+        }
+        else
+        {
+            AddBullets();
+        }
     }
-
+private IEnumerator ChargeGunCoroutine()
+    {
+      
+            animator.Play("Charge",0,0f);
+            yield return null;
+            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+            AddBullets();    
+    }
+private void AddBullets()
+    {
+        cartridgeBullets = Mathf.Min(gunData.cartridgeSize, totalBullets);
+        totalBullets -= cartridgeBullets;
+        UpdateAmmoText();
+    }    
 private void UpdateAmmoText()
     {
-        ammoText.text = $"{cartrigeBullets}/{totalBullets}";
+        ammoText.text = $"{cartridgeBullets}/{totalBullets}";
     }
 private void DamageEnemy(GameObject enemy)
     {
@@ -113,16 +130,16 @@ public void Shoot()
 
     private void TryShoot()
     {
-        if(totalBullets <= 0 && cartrigeBullets <= 0)
+        if(totalBullets <= 0 && cartridgeBullets <= 0)
         {
             SoundManager.instance.Play(gunData.dropSoundName);
             onGunEmpty?.Invoke();
             return;
         }
-        if(cartrigeBullets > 0 && Time.time >= nextFireTime)
+        if(cartridgeBullets > 0 && Time.time >= nextFireTime)
         {
             Shoot();
-            cartrigeBullets--;
+            cartridgeBullets--;
             UpdateAmmoText();
             nextFireTime = Time.time + 1f / gunData.fireRate;
         }

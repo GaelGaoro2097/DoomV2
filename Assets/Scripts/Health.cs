@@ -18,6 +18,7 @@ private UnityEvent<Transform> onHeal;
 private float currentHealth;
 public float CurrentHealth => currentHealth;
 public float MaxHealth => maxHealth;
+public bool IsDead => currentHealth <=0f;
 
 public void InitializeHealth()
     {
