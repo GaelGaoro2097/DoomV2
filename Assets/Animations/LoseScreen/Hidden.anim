@@ -31,7 +31,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: RetryButton
+    path: QuitButton
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -47,7 +47,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: QuitButton
+    path: 
   m_FloatCurves:
   - serializedVersion: 2
     curve:
@@ -100,7 +100,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3392766809
+      path: 1417888922
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -109,7 +109,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1417888922
+      path: 0
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -216,7 +216,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: RetryButton
+    path: QuitButton
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -237,7 +237,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: RetryButton
+    path: QuitButton
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -258,7 +258,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: RetryButton
+    path: QuitButton
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -279,7 +279,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: QuitButton
+    path: 
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -300,7 +300,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: QuitButton
+    path: 
     classID: 224
     script: {fileID: 0}
     flags: 0
@@ -321,7 +321,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: QuitButton
+    path: 
     classID: 224
     script: {fileID: 0}
     flags: 0
