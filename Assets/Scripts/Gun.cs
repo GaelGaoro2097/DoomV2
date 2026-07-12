@@ -35,7 +35,7 @@ public UnityEvent OnGunEmpty
 public void GrabGun (Transform gunPosition, Text bulletsText)
  
 {
-    ammoText = bulletsText;
+        ammoText = bulletsText;
     nextFireTime = 0f;
     totalBullets = gunData.totalBullets;
 transform.SetParent(gunPosition);
