@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 869042102539713812}
   - component: {fileID: 4060570934758018531}
   - component: {fileID: 2330143139068467605}
+  - component: {fileID: 9172763315410263192}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Enemy
@@ -153,10 +154,10 @@ MonoBehaviour:
   animator: {fileID: 4805858351063725000}
   damage: 20
   range: 10
-  fireRate: 12
+  fireRate: 3
   aimTime: 4
   timerText: {fileID: 6329044994864285066}
-  laserBeam: {fileID: 170782704593675397}
+  laserBeam: {fileID: 9172763315410263192}
 --- !u!114 &4060570934758018531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +208,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9172763315410263192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561188060825951171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed4e5817bcb70947a65e71db51574bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LaserBeam
+  startPoint: {fileID: 7808093741589615}
+  laserMesh: {fileID: 172412923971578039}
+  radius: 0.1
 --- !u!1 &2234946628118290582
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +635,6 @@ GameObject:
   - component: {fileID: 172412923971578039}
   - component: {fileID: 2941139702684635763}
   - component: {fileID: 3123064738051295640}
-  - component: {fileID: 170782704593675397}
   m_Layer: 0
   m_Name: EnemyLaser
   m_TagString: Untagged
@@ -699,22 +714,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &170782704593675397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5484995718161319398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed4e5817bcb70947a65e71db51574bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LaserBeam
-  startPoint: {fileID: 7808093741589615}
-  target: {fileID: 0}
-  laserMesh: {fileID: 172412923971578039}
-  radius: 0.1
 --- !u!1 &5702686639233598224
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +855,46 @@ PrefabInstance:
     - target: {fileID: 3454572756315661217, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
       propertyPath: m_Name
       value: Sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0105
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0099
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0008
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.5957705
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6634791
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.1286853
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.43392754
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -42.756
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -83.237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240890818608515095, guid: 11fc5deed0765f04ca9866596da3f661, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 110.488
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
