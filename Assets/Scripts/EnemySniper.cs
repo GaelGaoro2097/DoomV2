@@ -19,6 +19,7 @@ private bool IsInRange => Vector3.Distance(transform.position, player.position) 
 private bool isShooting = false;
 public override void OnEnable()
     {
+        timerText.text = "";
         isShooting = false;
         base.OnEnable();
         laserBeam.ActivateLaser(false);
@@ -29,15 +30,15 @@ public override void OnEnable()
     }
     private void Update()
     {
-        if(health.IsDead) return;
-        if(CheckWin()) return;
+        if (health.IsDead) return;
+        if (CheckWin()) return;
         transform.LookAt(player);
         if (!isShooting && IsInRange && Time.time >= nextFireTime)
         {
             isShooting = true;
             StartCoroutine(AimAndShoot());
         }
-    }       
+    }
     private IEnumerator AimAndShoot()
     {
         laserBeam.Target = player;
@@ -52,21 +53,24 @@ public override void OnEnable()
         float duration = aimTime;
         while (duration > 0f)
         {
-            duration--;
+            SoundManager.instance.Play("sniper_timer");
+            duration --;
             timerText.text = duration.ToString();
             yield return new WaitForSeconds(1f);
         }
-        animator.Play("Fire",0,0f);
-        SoundManager.instance.Play("sniper_shot");
+        timerText.text = "";
+        animator.Play("Fire", 0, 0f);
+        SoundManager.instance.Play("sniper_shoot");
         laserBeam.ActivateLaser(false);
         player.GetComponent<Health>().TakeDamage(damage);
         isShooting = false;
-        nextFireTime= Time.time + fireRate;
+        nextFireTime = Time.time + fireRate;
     }
     public override void Die()
     {
         laserBeam.ActivateLaser(false);
         base.Die();
-        SoundManager.instance.Play("sniper_die");
+        SoundManager.instance.Play("sniper_death");
     }
 }
+ 

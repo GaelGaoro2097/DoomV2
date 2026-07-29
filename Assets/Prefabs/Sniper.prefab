@@ -222,7 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaserBeam
   startPoint: {fileID: 7808093741589615}
   laserMesh: {fileID: 172412923971578039}
-  radius: 0.1
+  radius: 0.01
+  targetOffset: {x: 0, y: 1.2, z: 0}
 --- !u!1 &2234946628118290582
 GameObject:
   m_ObjectHideFlags: 0
