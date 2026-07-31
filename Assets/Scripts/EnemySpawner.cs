@@ -17,7 +17,7 @@ public void SpawnEnemies()
         {
             Enemy enemy = Instantiate(spawn.enemyPrefab, spawn.spawnPoint.position,
             spawn.spawnPoint.rotation).GetComponent<Enemy>();
-            enemy.OnDied.AddListener(OnEnemyDied);
+            enemy.OnDie.AddListener(OnEnemyDied);
         }
         onEnemiesSpawned?.Invoke();
     }

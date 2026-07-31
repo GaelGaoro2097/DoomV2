@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+ 
 public class Player : MonoBehaviour
 {
     [SerializeField]
@@ -19,8 +20,8 @@ public class Player : MonoBehaviour
     private FirstPersonMovement firstPersonMovement;
     private Gun currentGun;
     private void Awake()
-    {      
-    firstPersonMovement = GetComponent <FirstPersonMovement>();
+    {
+     firstPersonMovement = GetComponent<FirstPersonMovement>();    
      rb = GetComponent<Rigidbody>();
      health = GetComponent<Health>();
     }
@@ -60,8 +61,7 @@ public class Player : MonoBehaviour
     public void PushBack(Transform enemy, float force)
     {
         Vector3 pushDirection = (transform.position - enemy.position).normalized;
-        rb.AddForce(pushDirection * force, ForceMode.Impulse);
-        firstPersonMovement.AddKnockback(pushDirection,force);
+        firstPersonMovement.AddKnockback(pushDirection, force);
     }
     public void Die()
     {

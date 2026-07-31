@@ -545,6 +545,7 @@ MonoBehaviour:
   fireRate: 2
   shootPivot: {fileID: 5159484124085851242}
   bulletPrefab: {fileID: 4546253595955141740, guid: 770594ed428f581419c02f1b8afc9d3e, type: 3}
+  fireParticlesPrefab: {fileID: 407022151045738872, guid: b5bdaf4cf78558541b81d933304ce4ba, type: 3}
   speed: 2
 --- !u!65 &7841341610649992683
 BoxCollider:

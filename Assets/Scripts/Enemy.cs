@@ -1,26 +1,28 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
-
+ 
 public class Enemy : MonoBehaviour
 {
-   [SerializeField]
-   protected Animator animator;
-   [SerializeField]
-   protected float damage = 20f;
-   protected Health health;
-   protected Transform player;
-   private UnityEvent onDied = new UnityEvent();
-   public UnityEvent OnDied => onDied;
-   protected bool didWin = false;
-   protected Health playerHealth;
+[SerializeField]
+protected Animator animator;
+[SerializeField]
+protected float damage = 20f;
+protected Health health;
+protected Transform player;
+private UnityEvent onDie = new UnityEvent();
+public UnityEvent OnDie => onDie;
+protected bool didWin = false;
+protected Rigidbody rb;
+protected Health playerHealth;
 private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         health = GetComponent<Health>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<Health>();
     }
-protected bool CheckWin()
+    protected bool CheckWin()
     {
         if (playerHealth.IsDead && !didWin)
         {
@@ -28,27 +30,27 @@ protected bool CheckWin()
             didWin = true;
             Dance();
         }
-    return playerHealth.IsDead;    
+        return playerHealth.IsDead;
     }
-public virtual void OnEnable() 
-{
-   health.InitializeHealth(); 
-   didWin = false;
-}
-public virtual void Dance()
+    public virtual void OnEnable()
     {
-        animator.Play("Dance",0,0f);
+        health.InitializeHealth();
+        didWin = false;
     }
-public virtual void TakeDamage()
+    public virtual void Dance()
     {
-        animator.Play("Damage",0,0f);
+        animator.Play("Dance", 0, 0f);
+    }
+    public virtual void TakeDamage()
+    {
+        animator.Play("Damage", 0, 0f);
     }
     public virtual void Die()
     {
         GetComponent<Collider>().enabled = false;
-        onDied?.Invoke();
+        onDie?.Invoke();
         StopAllCoroutines();
-        animator.Play("Death",0,0f);
+        animator.Play("Death", 0, 0f);
         StartCoroutine(DieCoroutine());
     }
     private IEnumerator DieCoroutine()
@@ -57,5 +59,5 @@ public virtual void TakeDamage()
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         gameObject.SetActive(false);
     }
-    
 }
+ 

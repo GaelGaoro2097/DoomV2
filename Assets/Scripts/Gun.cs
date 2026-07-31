@@ -4,29 +4,23 @@ using UnityEngine.Events;
 using System.Collections;
 public class Gun: MonoBehaviour
 {
-    [SerializeField]
- 
+[SerializeField]
 private Animator animator;
 [SerializeField]
- 
 private Rotate rotateScript;
  [SerializeField]
- 
 private GunData gunData;
  [SerializeField]
- 
 private Transform bulletPivot;
 [SerializeField]
- 
 private GameObject bulletPrefab;
+[SerializeField]
+private GameObject fireParticlesPrefab;
 private Text ammoText;
-
 private float nextFireTime;
 private int totalBullets;
 private int cartridgeBullets;
-
 private UnityEvent onGunEmpty = new UnityEvent();
-
 public UnityEvent OnGunEmpty
     {
         set => onGunEmpty = value;
@@ -62,7 +56,6 @@ public void ChargeGun(bool playAnimation=true)
     }
 private IEnumerator ChargeGunCoroutine()
     {
-      
             animator.Play("Charge",0,0f);
             yield return null;
             yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
@@ -87,6 +80,7 @@ private void DamageEnemy(GameObject enemy)
     }
 public void Shoot()
     {
+        PoolManager.Instance.GetObject(fireParticlesPrefab,bulletPivot.position);
         float rayDistance = 1000f;
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
         Vector3 targetPoint;
