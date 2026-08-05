@@ -15100,139 +15100,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6053771845067770069, guid: 1aa40f61b9dff8243a113cb21796b3fc, type: 3}
---- !u!1 &622722047 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+--- !u!114 &622722054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 314749165024198874, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
   m_PrefabInstance: {fileID: 1840654976}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &622722054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622722047}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7582dc2a4e2d5674584ec0bf8488ae3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  gunPosition: {fileID: 1607786149}
-  inputManager: {fileID: 1450167762}
-  ammoText: {fileID: 2099208145}
-  onGunGrabbed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1048774159}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  onGunDropped:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1048774159}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &622722055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622722047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f933adf1ccb04ab45d8e662b5efc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  healthBar: {fileID: 1044107245}
-  maxHealth: 100
-  onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 622722054}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: Die
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1167286791}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoseLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDamageTaken:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1185498642}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Show
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHeal:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2076754646}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Health_pickup
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 981571424}
-        m_TargetAssemblyTypeName: InstantiateObject, Assembly-CSharp
-        m_MethodName: InstantiatePrefab
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1607786149}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Health_pickup
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &623197279 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1237774550027803062, guid: dd8db4e8ae042d44bb14b9605b044965, type: 3}
@@ -34918,6 +34796,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnScrollUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1982098002}
+        m_TargetAssemblyTypeName: GunManager, Assembly-CSharp
+        m_MethodName: SwitchUpGun
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnScrollDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1982098002}
+        m_TargetAssemblyTypeName: GunManager, Assembly-CSharp
+        m_MethodName: SwitchDownGun
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1450167763
 Transform:
   m_ObjectHideFlags: 0
@@ -38269,11 +38177,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!4 &1607786149 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7657817385167699618, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
-  m_PrefabInstance: {fileID: 1840654976}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1608766141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43930,10 +43833,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4207293392497186, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.44
@@ -43974,16 +43873,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 314749165024198874, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: gunManager
+      value: 
+      objectReference: {fileID: 1982098002}
+    - target: {fileID: 7037029654535821914, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 2099208145}
+    - target: {fileID: 7037029654535821914, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1450167762}
+    - target: {fileID: 7037029654535821914, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: onGunDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1048774159}
+    - target: {fileID: 7037029654535821914, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: onGunGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1048774159}
+    - target: {fileID: 8524322481828969261, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1044107245}
+    - target: {fileID: 8524322481828969261, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: onHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2076754646}
+    - target: {fileID: 8524322481828969261, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: onHeal.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 981571424}
+    - target: {fileID: 8524322481828969261, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1167286791}
+    - target: {fileID: 8524322481828969261, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: onDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1185498642}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 622722055}
-    - targetCorrespondingSourceObject: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 622722054}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
 --- !u!114 &1840654977 stripped
 MonoBehaviour:
@@ -47664,6 +47597,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6053771845067770069, guid: 1aa40f61b9dff8243a113cb21796b3fc, type: 3}
+--- !u!114 &1982098002 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7037029654535821914, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+  m_PrefabInstance: {fileID: 1840654976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd037cb1d8443d4884019962532c583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GunManager
 --- !u!1001 &1982191002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52968,17 +52912,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: HellKnight
       objectReference: {fileID: 0}
+    - target: {fileID: 3219620313770474197, guid: 7b1b1db54b29da847929e57586be63dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4899494944500238501, guid: 7b1b1db54b29da847929e57586be63dd, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4899494944500238501, guid: 7b1b1db54b29da847929e57586be63dd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4899494944500238501, guid: 7b1b1db54b29da847929e57586be63dd, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7411942323324164714, guid: 7b1b1db54b29da847929e57586be63dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52994,11 +52942,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8464143662445834435, guid: 7b1b1db54b29da847929e57586be63dd, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8464143662445834435, guid: 7b1b1db54b29da847929e57586be63dd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9010113281566485634, guid: 7b1b1db54b29da847929e57586be63dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53178,83 +53126,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71ea49868ee2b6a49b6904144b3dd9f9, type: 3}
---- !u!1001 &7688136129459181171
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1850174253248748160, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850174253248748160, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.8793287
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1017848
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12.33921
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736031401628786138, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963323196895854732, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963323196895854732, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963323196895854732, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716792784909746519, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
-      propertyPath: m_Name
-      value: CyberMancubus
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3585bda69fe9f5744a4cebc37817980d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -53285,4 +53156,3 @@ SceneRoots:
   - {fileID: 1825750102}
   - {fileID: 2788953266123853718}
   - {fileID: 1606657866283340248}
-  - {fileID: 7688136129459181171}

@@ -5,6 +5,10 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent OnPKeyPressed;
+    [SerializeField]
+    private UnityEvent OnScrollUp;
+    [SerializeField]
+    private UnityEvent OnScrollDown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public bool LeftButtonPressed{ get; private set;}
 public bool LeftButtonHeld{ get; private set;}
@@ -18,6 +22,15 @@ private void Update()
         if (Input.GetKeyDown(KeyCode.P))
         {
             OnPKeyPressed.Invoke();
+        }
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if(scroll > 0f)
+        {
+            OnScrollUp?.Invoke();
+        }
+        else if (scroll < 0f)
+        {
+            OnScrollDown?.Invoke();
         }
 }
 
