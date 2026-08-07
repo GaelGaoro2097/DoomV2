@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 7257913253858279226}
   - component: {fileID: 1546844947251464003}
   - component: {fileID: 2148952518025026498}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CacoDemon02
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -13,6 +13,10 @@ private UnityEvent onGunDropped;
 private Transform gunPosition;
  [SerializeField]
 private Text ammoText;
+ [SerializeField]
+private Image gunIcon;
+ [SerializeField]
+private Scope scope;
 [SerializeField]
 private InputManager inputManager;
 private Gun currentGun;
@@ -40,8 +44,11 @@ public void GrabGun(Gun gun)
         currentGun = gun;
         currentGun.GrabGun(gunPosition,ammoText);
         currentGun.OnGunEmpty.AddListener(DropGun);
+        currentGun.OnGunShoot.AddListener(scope.PlayFireAnimation);
         onGunGrabbed?.Invoke();
         currentGunIndex = guns.IndexOf(currentGun);
+        gunIcon.sprite = currentGun.GunData.sprite;
+        gunIcon.SetNativeSize();
     }
 public void SwitchUpGun()
     {
@@ -65,9 +72,19 @@ public void SwitchDownGun()
     {
         if (guns.Count <= 1) return;
         currentGun.gameObject.SetActive(false);
+        SetGun();
+    }
+    public void SetGun()
+    {
         currentGun = guns[currentGunIndex];
         currentGun.gameObject.SetActive(true);
-        currentGun.GrabGun(gunPosition, ammoText, false);
+        currentGun.GrabGun(gunPosition,ammoText,false);
+        SetIcon(currentGun.GunData.sprite);
+    }
+    public void SetIcon(Sprite sprite)
+    {
+        gunIcon.sprite = sprite;
+        gunIcon.SetNativeSize();
     }
     public void DropAllGuns()
     {
@@ -82,14 +99,13 @@ public void SwitchDownGun()
     public void DropGun()
     {
         currentGun.OnGunEmpty.RemoveListener(DropGun);
+        currentGun.OnGunShoot.RemoveListener(scope.PlayFireAnimation);
         guns.Remove(currentGun);
         Destroy(currentGun.gameObject);
         if(guns.Count > 0)
         {
             currentGunIndex = guns.Count - 1;
-            currentGun = guns[currentGunIndex];
-            currentGun.gameObject.SetActive(true);
-            currentGun.GrabGun(gunPosition, ammoText, false);
+            SetGun();
         }
         else
         {
@@ -104,6 +120,14 @@ public void SwitchDownGun()
         if (inputManager.RightButtonPressed)
         {
             currentGun.ChargeGun();
+        }
+        if (currentGun.IsAimingEnemy())
+        {
+            scope.ChangeToAimingColor();
+        }
+        else
+        {
+            scope.ChangeToIdleColor();
         }
     }
 }

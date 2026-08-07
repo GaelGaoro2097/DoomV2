@@ -15,9 +15,10 @@ MonoBehaviour:
   damage: 10
   fireRate: 20
   totalBullets: 60
-  reloatTime: 2
+  reloadTime: 0
   cartridgeSize: 10
   gunType: 0
   shootSoundName: shoot
   reloadSoundName: reload
   dropSoundName: drop_gun
+  sprite: {fileID: 21300000, guid: 41f77dd4b1ec0774295adb5dac07ffd7, type: 3}

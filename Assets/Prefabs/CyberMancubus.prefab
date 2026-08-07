@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 7841341610649992683}
   - component: {fileID: 3840820012174926434}
   - component: {fileID: 7718691486567076591}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CyberMancubus
   m_TagString: Enemy
   m_Icon: {fileID: 0}

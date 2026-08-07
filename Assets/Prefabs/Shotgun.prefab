@@ -120,6 +120,9 @@ MonoBehaviour:
   bulletPivot: {fileID: 2197486826092250597}
   bulletPrefab: {fileID: 3365618674941872038, guid: 0716bcc897fae6c468423f5286bc54aa, type: 3}
   fireParticlesPrefab: {fileID: 4006082283068484063, guid: 44ead2d4739484549aa0fff0fafdfa8b, type: 3}
+  aimLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &7724530317731118253
 GameObject:
   m_ObjectHideFlags: 0
